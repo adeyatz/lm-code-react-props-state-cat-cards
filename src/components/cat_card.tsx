@@ -122,10 +122,7 @@ interface CatCardProps {
 }
 
 const CatCard: React.FC<CatCardProps> = ({ catObj, catIndex }) => {
-  //   console.log(
-  //     "CatCard receiving props from App?! Come in App?! 😸 Props received are: ",
-  //     props
-  //   );
+  const { name, species, favFoods, birthYear } = catObj;
   return (
     <div className="card">
       {catIndex < images.length && (
@@ -138,10 +135,10 @@ const CatCard: React.FC<CatCardProps> = ({ catObj, catIndex }) => {
           attributionUrl={images[catIndex].attributionUrl}
         />
       )}
-      <h3 className="card__text card__header">{catObj.name}</h3>
-      <p className="card__text">Species: {catObj.species}</p>
-      <p className="card__text">Favourite Food(s): {catObj.favFoods}</p>
-      <p className="card__text">Birth Year: {catObj.birthYear} </p>
+      <h3 className="card__text card__header">{name}</h3>
+      <p className="card__text">Species: {species}</p>
+      <p className="card__text">Favourite Food(s): {favFoods}</p>
+      <p className="card__text">Birth Year: {birthYear} </p>
     </div>
   );
 };
