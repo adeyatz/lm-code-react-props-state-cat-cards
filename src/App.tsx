@@ -82,13 +82,19 @@ function App(): JSX.Element {
       favFoods: ["milk"],
       birthYear: 2021,
     },
+    {
+      name: "Captain Catface",
+      species: "Sea Cattain",
+      favFoods: ["fish, rum"],
+      birthYear: 2016,
+    },
   ]);
-  console.log("Our pretties 😻: ", cats);
+  console.log("Our pretties 😻: ", cats.length);
 
   return (
     <>
       <Navbar />
-      <Header />
+      <Header count={cats.length} />
 
       <main>
         <div className="cards__wrapper">
