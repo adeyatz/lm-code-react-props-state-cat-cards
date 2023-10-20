@@ -1,5 +1,5 @@
-import Cat from "../data/cat";
-import CatImage from "./cat_image";
+import DomesticAnimal from "../data/domesticAnimal";
+import AnimalImage from "./animal_image";
 import cat1 from "../assets/images/cat1.jpg";
 import cat2 from "../assets/images/cat2.jpg";
 import cat3 from "../assets/images/cat3.jpg";
@@ -13,7 +13,7 @@ import cat10 from "../assets/images/cat10.jpg";
 import cat11 from "../assets/images/cat11.jpg";
 import cat12 from "../assets/images/cat12.jpg";
 
-const images = [
+const catImages = [
   {
     image: cat1,
     altText: "Describe this cat!",
@@ -112,27 +112,32 @@ const images = [
   },
 ];
 
-interface CatCardProps {
+interface AnimalCardProps {
   //   name: string;
   //   species: string;
   //   favFoods: string[];
   //   birthYear: number;
-  catObj: Cat;
-  catIndex: number;
+  animalObj: DomesticAnimal;
+  imageIndex: number;
+  animalType: "Cat" | "Dog";
 }
 
-const CatCard: React.FC<CatCardProps> = ({ catObj, catIndex }) => {
-  const { name, species, favFoods, birthYear } = catObj;
+const AnimalCard: React.FC<AnimalCardProps> = ({
+  animalObj: animalAttributes,
+  imageIndex,
+  animalType: typeOfAnimal,
+}) => {
+  const { name, species, favFoods, birthYear } = animalAttributes;
   return (
     <div className="card">
-      {catIndex < images.length && (
-        <CatImage
-          image={images[catIndex].image}
-          altText={images[catIndex].altText}
-          licenceType={images[catIndex].licenceType}
-          licenceUrl={images[catIndex].licenceUrl}
-          attributionName={images[catIndex].attributionName}
-          attributionUrl={images[catIndex].attributionUrl}
+      {imageIndex < catImages.length && typeOfAnimal === "Cat" && (
+        <AnimalImage
+          image={catImages[imageIndex].image}
+          altText={catImages[imageIndex].altText}
+          licenceType={catImages[imageIndex].licenceType}
+          licenceUrl={catImages[imageIndex].licenceUrl}
+          attributionName={catImages[imageIndex].attributionName}
+          attributionUrl={catImages[imageIndex].attributionUrl}
         />
       )}
       <h3 className="card__text card__header">{name}</h3>
@@ -143,4 +148,4 @@ const CatCard: React.FC<CatCardProps> = ({ catObj, catIndex }) => {
   );
 };
 
-export default CatCard;
+export default AnimalCard;

@@ -1,4 +1,4 @@
-export default interface Cat {
+export default interface DomesticAnimal {
   name: string;
   species: string;
   favFoods: string[];

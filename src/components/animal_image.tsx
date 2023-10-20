@@ -1,4 +1,4 @@
-interface CatImageProps {
+interface AnimalImageProps {
   image: string;
   altText: string;
   licenceType: string;
@@ -7,7 +7,7 @@ interface CatImageProps {
   attributionUrl?: string;
 }
 
-const CatImage: React.FC<CatImageProps> = ({
+const AnimalImage: React.FC<AnimalImageProps> = ({
   image,
   altText,
   licenceType,
@@ -17,7 +17,7 @@ const CatImage: React.FC<CatImageProps> = ({
 }) => {
   return (
     <>
-      <img className="card_image" src={image} alt={altText} />
+      <img className="card__image" src={image} alt={altText} />
       <p className="card__text__small">
         Image licenced under <a href={licenceUrl}>{licenceType}</a>
         {attributionName && (
@@ -30,4 +30,4 @@ const CatImage: React.FC<CatImageProps> = ({
   );
 };
 
-export default CatImage;
+export default AnimalImage;

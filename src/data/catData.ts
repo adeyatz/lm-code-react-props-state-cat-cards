@@ -1,7 +1,7 @@
 import { v4 as uuidv4 } from "uuid";
-import Cat from "./cat";
+import DomesticAnimal from "./domesticAnimal";
 
-const catData: Array<Cat> = [
+const catData: Array<DomesticAnimal> = [
   {
     name: "Little Miss Purrfect",
     species: "Cat",
@@ -83,5 +83,5 @@ const catData: Array<Cat> = [
 ];
 
 catData.forEach((cat) => (cat.id = uuidv4()));
-console.log(catData);
+console.log("Cat data: 😼", catData);
 export default catData;
