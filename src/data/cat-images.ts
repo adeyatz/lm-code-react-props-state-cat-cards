@@ -1,5 +1,3 @@
-import DomesticAnimal from "../data/domesticAnimal";
-import AnimalImage from "./animal_image";
 import cat1 from "../assets/images/cat1.jpg";
 import cat2 from "../assets/images/cat2.jpg";
 import cat3 from "../assets/images/cat3.jpg";
@@ -112,40 +110,4 @@ const catImages = [
   },
 ];
 
-interface AnimalCardProps {
-  //   name: string;
-  //   species: string;
-  //   favFoods: string[];
-  //   birthYear: number;
-  animalObj: DomesticAnimal;
-  imageIndex: number;
-  animalType: "Cat" | "Dog";
-}
-
-const AnimalCard: React.FC<AnimalCardProps> = ({
-  animalObj: animalAttributes,
-  imageIndex,
-  animalType: typeOfAnimal,
-}) => {
-  const { name, species, favFoods, birthYear } = animalAttributes;
-  return (
-    <div className="card">
-      {imageIndex < catImages.length && typeOfAnimal === "Cat" && (
-        <AnimalImage
-          image={catImages[imageIndex].image}
-          altText={catImages[imageIndex].altText}
-          licenceType={catImages[imageIndex].licenceType}
-          licenceUrl={catImages[imageIndex].licenceUrl}
-          attributionName={catImages[imageIndex].attributionName}
-          attributionUrl={catImages[imageIndex].attributionUrl}
-        />
-      )}
-      <h3 className="card__text card__header">{name}</h3>
-      <p className="card__text">Species: {species}</p>
-      <p className="card__text">Favourite Food(s): {favFoods.join(",")}</p>
-      <p className="card__text">Birth Year: {birthYear} </p>
-    </div>
-  );
-};
-
-export default AnimalCard;
+export default catImages;

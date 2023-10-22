@@ -1,4 +1,4 @@
-export default interface DomesticAnimal {
+export default interface Pet {
   name: string;
   species: string;
   favFoods: string[];

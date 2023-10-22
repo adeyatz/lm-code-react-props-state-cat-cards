@@ -1,4 +1,4 @@
-interface AnimalImageProps {
+interface PetImageProps {
   image: string;
   altText: string;
   licenceType: string;
@@ -7,7 +7,7 @@ interface AnimalImageProps {
   attributionUrl?: string;
 }
 
-const AnimalImage: React.FC<AnimalImageProps> = ({
+const PetImage: React.FC<PetImageProps> = ({
   image,
   altText,
   licenceType,
@@ -30,4 +30,4 @@ const AnimalImage: React.FC<AnimalImageProps> = ({
   );
 };
 
-export default AnimalImage;
+export default PetImage;
