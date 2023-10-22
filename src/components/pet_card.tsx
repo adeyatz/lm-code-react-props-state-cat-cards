@@ -8,7 +8,7 @@ interface PetCardProps {
   animalType: "Cat" | "Dog";
 }
 
-const AnimalCard: React.FC<PetCardProps> = ({
+const PetCard: React.FC<PetCardProps> = ({
   petObj,
   imageIndex,
   animalType,
@@ -34,4 +34,4 @@ const AnimalCard: React.FC<PetCardProps> = ({
   );
 };
 
-export default AnimalCard;
+export default PetCard;
