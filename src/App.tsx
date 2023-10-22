@@ -7,6 +7,7 @@ import Pet from "./data/pet";
 import PetCard from "./components/pet_card";
 import catData from "./data/cat-data";
 import dogData from "./data/dog-data";
+import PetForm from "./components/pet-form";
 
 function App(): JSX.Element {
   // JavaScript/TypeScript code can be inserted here!
@@ -41,6 +42,10 @@ function App(): JSX.Element {
               animalType="Dog"
             />
           ))}
+        </div>
+
+        <div className="pet__form">
+          <PetForm pets={cats} setPets={setCats} />
         </div>
       </main>
 
